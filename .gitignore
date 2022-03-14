@@ -1,0 +1,9 @@
+PetFinder-swin/ 
+swin_tiny_patch4_window7_224/
+wandb/
+/petfinder-cnn-semi-supervised-training-fastai.ipynb
+/petfinder-cnn-training-for-pseudolabel-2-fastai.ipynb
+/petfinder-make-pseudolabel-dataset.ipynb
+/petfinder-pawpularity-eda-fastai-starter.ipynb
+/train-swin-t-pytorch-lightning.ipynb
+/114th-ensemble-7models-pseudo-and-not-pseudo (2).ipynb
