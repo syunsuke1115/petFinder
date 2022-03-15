@@ -23,3 +23,23 @@ Epoch 3 - Save Best Score: 19.8700 Model
 Score: 19.8700
 ========== CV ==========
 Score: 20.0616
+===== Fold 0 =====
+===== Fold 0 =====
+train size : 4956  valid size : 4956
+Dumping model with pickle... lightgbm_fold0.pkl
+fold0 score: 18.97163
+===== Fold 1 =====
+train size : 4956  valid size : 4956
+Dumping model with pickle... lightgbm_fold1.pkl
+fold1 score: 18.72528
+===== Fold 2 =====
+===== Fold 0 =====
+train size : 4956  valid size : 4956
+Dumping model with pickle... lightgbm_fold0.pkl
+fold0 score: 18.97163
+===== Fold 1 =====
+train size : 4956  valid size : 4956
+Dumping model with pickle... lightgbm_fold1.pkl
+fold1 score: 18.72528
+CV score: 18.84886
+CV: 18.84886
