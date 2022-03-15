@@ -8,5 +8,6 @@ kaggleコンペpetfinder　https://www.kaggle.com/c/petfinder-adoption-predictio
 https://www.kaggle.com/c/petfinder-adoption-prediction　
 
 ### ディレクトリ配置
-
+以下のようにディレクトリを配置してください。
+このレポジトリをnotebook以下にそのまま配置しても大丈夫です。
 <img width="302" alt="スクリーンショット 2022-03-15 11 11 18" src="https://user-images.githubusercontent.com/81937075/158292065-8dba4583-8d73-40fc-b34f-19eb5ec093aa.png">
