@@ -10,8 +10,7 @@ https://www.notion.so/petFinder-e23a223644bb48afb298a3652613b95b
 
 ## webアプリ
 streamlitを用いて簡単なwebアプリを作成した。share streamlitを使ってデプロイしている。
-streamlitに関するコードはstreamlitディレクトリの中に入っている。
-↓アプリURL　
+streamlitに関するコードはstreamlitディレクトリの中に入っている。　
 https://share.streamlit.io/syunsuke1115/petfinder/main.py
 
 ## 環境構築
