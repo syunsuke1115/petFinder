@@ -7,7 +7,7 @@ kaggleコンペpetfinder　https://www.kaggle.com/c/petfinder-adoption-predictio
 実験の詳細は以下に記載。モデルに関するコードはmy_templete.ipynbに記載されている。
 https://www.notion.so/petFinder-e23a223644bb48afb298a3652613b95b
 
-#　webアプリ
+# webアプリ
 streamlitを用いて簡単なwebアプリを作成した。share streamlitを使ってデプロイしている。
 streamlitに関するコードはstreamlitディレクトリの中に入っている。
 
