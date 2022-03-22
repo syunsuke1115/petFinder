@@ -1,0 +1,6 @@
+pandas
+PIL
+torch
+torchvision
+timm
+streamlit

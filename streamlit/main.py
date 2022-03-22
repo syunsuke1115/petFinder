@@ -1,4 +1,3 @@
-from cProfile import label
 import streamlit as st
 import os
 import random
