@@ -1,3 +1,4 @@
+from cProfile import label
 import streamlit as st
 import os
 import random
@@ -53,8 +54,7 @@ def set_seed(seed =42):
     torch.backends.cudnn.deterministic =True
 set_seed(seed=CFG.seed) 
 
-def input_image(uploaded_file):
-    image = Image.open(uploaded_file)
+def set_image(image):
     transform = transforms.Compose([
             transforms.Resize((CFG.size,CFG.size)),
             transforms.ToTensor(),
@@ -68,22 +68,33 @@ def input_image(uploaded_file):
     img_batch = image[None]
     return img_batch
 
+def get_score(result):
+    train = pd.read_csv('../../input/petfinder-pawpularity-score/train.csv')
+    pawpularity_mean = train["Pawpularity"].mean()
+    pawpularity_std = train["Pawpularity"].std()
+    deviation =((result-pawpularity_mean)/pawpularity_std*10 +50).round()
+    result = result.round()
+    return result, deviation
+    
 def main():
-    st.header("あなたのペットの可愛さを判定します")
-    uploaded_file=st.file_uploader("画像アップロード", type='png')
+    st.header("あなたのペットの可愛さを採点します")
+    st.text("※kaggleコンペティションpetfinderのデータを使用しています")
+    uploaded_file=st.file_uploader("画像アップロード")
     
     if st.button("Submit"):
-        img_batch = input_image(uploaded_file)
+        image = Image.open(uploaded_file)
+        img_batch = set_image(image)
         model = CnnModel(CFG, pretrained=False)
         state = torch.load('../my_model/tf_efficientnet_b0_ns_fold0_best.pth', 
                         map_location=torch.device('cpu'))['model']
         model.load_state_dict(state)
         model.eval()
-        relust= model(img_batch)
-        # Output prediction
-        st.text(f"{relust[0][0]}")
+        result= model(img_batch)
+        result, deviation = get_score(result[0][0])
+        
+        st.image(image,width= 500)
+        st.success(f"得点: {int(result)}")
+        st.info(f"偏差値: {int(deviation)}")
         
 if __name__ == '__main__':
     main()
-    
-
