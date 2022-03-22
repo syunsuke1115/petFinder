@@ -68,9 +68,8 @@ def set_image(image):
     return img_batch
 
 def get_score(result):
-    train = pd.read_csv('../../input/petfinder-pawpularity-score/train.csv')
-    pawpularity_mean = train["Pawpularity"].mean()
-    pawpularity_std = train["Pawpularity"].std()
+    pawpularity_mean = 38.03904358353511
+    pawpularity_std = 20.591990105774546
     deviation =((result-pawpularity_mean)/pawpularity_std*10 +50).round()
     result = result.round()
     return result, deviation
@@ -84,7 +83,7 @@ def main():
         image = Image.open(uploaded_file)
         img_batch = set_image(image)
         model = CnnModel(CFG, pretrained=False)
-        state = torch.load('../my_model/tf_efficientnet_b0_ns_fold0_best.pth', 
+        state = torch.load('./tf_efficientnet_b0_ns_fold0_best.pth', 
                         map_location=torch.device('cpu'))['model']
         model.load_state_dict(state)
         model.eval()
