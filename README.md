@@ -1,11 +1,11 @@
-## 概要
-kaggleコンペpetfinder　https://www.kaggle.com/c/petfinder-adoption-prediction
+## 概要　https://www.kaggle.com/c/petfinder-adoption-prediction
+kaggleコンペpetfinder　
 を題材に、モデルの作成、実験と簡単なwebアプリの制作を行っている。
 
-## モデル作成
+## モデル作成と実験　https://www.notion.so/petFinder-e23a223644bb48afb298a3652613b95b
 いくつか条件を変えて、実験を行った。
 実験の詳細は以下に記載。モデルに関するコードはmy_templete.ipynbに記載されている。
-https://www.notion.so/petFinder-e23a223644bb48afb298a3652613b95b
+
 
 
 ## webアプリ
