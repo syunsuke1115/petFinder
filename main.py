@@ -83,7 +83,7 @@ def main():
         image = Image.open(uploaded_file)
         img_batch = set_image(image)
         model = CnnModel(CFG, pretrained=False)
-        state = torch.load('tf_efficientnet_b0_ns_fold0_best.pth', 
+        state = torch.load('./tf_efficientnet_b0_ns_fold0_best.pth', 
                         map_location=torch.device('cpu'))['model']
         model.load_state_dict(state)
         model.eval()
