@@ -1,5 +1,5 @@
 pandas
-PIL
+Image
 torch
 torchvision
 timm
