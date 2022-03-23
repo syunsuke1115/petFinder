@@ -75,8 +75,8 @@ def set_image(uploaded_file):
             ),
             
         ])
-    image = transform(image)
-    img_batch = image[None]
+    image_tensor = transform(image)
+    img_batch = image_tensor[None]
     return image,img_batch
 
 def set_model(CFG):
