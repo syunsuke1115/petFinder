@@ -64,7 +64,8 @@ def set_seed(seed =42):
     torch.cuda.manual_seed(seed)
     torch.backends.cudnn.deterministic =True
 
-def set_image(image):
+def set_image(uploaded_file):
+    image = Image.open(uploaded_file)
     transform = transforms.Compose([
             transforms.Resize((CFG.size,CFG.size)),
             transforms.ToTensor(),
@@ -76,7 +77,7 @@ def set_image(image):
         ])
     image = transform(image)
     img_batch = image[None]
-    return img_batch
+    return image,img_batch
 
 def set_model(CFG):
     if (CFG.isTransformer):
@@ -111,8 +112,7 @@ def main():
             st.error('画像を提出してください')
             return
         
-        image = Image.open(uploaded_file)
-        img_batch = set_image(image)
+        image,img_batch = set_image(uploaded_file)
         model = set_model(CFG)
         
         result= model(img_batch)
