@@ -80,6 +80,9 @@ def main():
     uploaded_file=st.file_uploader("画像アップロード")
     
     if st.button("Submit"):
+        if uploaded_file is None:
+            st.error('画像を提出してください')
+            return
         image = Image.open(uploaded_file)
         img_batch = set_image(image)
         model = CnnModel(CFG, pretrained=False)
