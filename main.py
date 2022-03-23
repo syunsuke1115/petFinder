@@ -13,10 +13,11 @@ warnings.filterwarnings('ignore')
 torch.backends.cudnn.benchmark = True
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-class CFG: #モデルを変えるときはここを変更する
+class CFG: #モデルによって変える。
     size=224 
     model_name='tf_efficientnet_b0_ns' 
     seed=42
+    target_size=1
     model_path = './tf_efficientnet_b0_ns_fold0_best.pth'
     isTransformer =False
     
@@ -93,6 +94,7 @@ def get_score(result):
     #デプロイにデータベースを載せたくなかったので、別ファイルで計算した値をベタ打ち
     pawpularity_mean = 38.03904358353511
     pawpularity_std = 20.591990105774546
+    
     deviation =((result-pawpularity_mean)/pawpularity_std*10 +50).round()
     result = result.round()
     return result, deviation
